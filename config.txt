@@ -1,0 +1,9 @@
+# API配置文件
+# 目标API地址
+API_URL=https://chat-ai.academiccloud.de/api/chat/completions
+
+# Cookie (必需)
+COOKIE=mod_auth_openidc_session=9b1fb4dc-4126-4eaf-b02e-afdb0e5963ce
+
+# 本地服务端口
+PORT=8000

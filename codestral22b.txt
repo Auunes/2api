@@ -1,0 +1,105 @@
+curl ^"https://chat-ai.academiccloud.de/api/chat/completions^" ^
+  -H ^"accept: application/json^" ^
+  -H ^"accept-language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7^" ^
+  -H ^"authorization: Bearer Missing Key^" ^
+  -H ^"cache-control: no-cache^" ^
+  -H ^"content-type: application/json^" ^
+  -H ^"cookie: mod_auth_openidc_session=9b1fb4dc-4126-4eaf-b02e-afdb0e5963ce^" ^
+  -H ^"dnt: 1^" ^
+  -H ^"origin: https://chat-ai.academiccloud.de^" ^
+  -H ^"pragma: no-cache^" ^
+  -H ^"priority: u=1, i^" ^
+  -H ^"referer: https://chat-ai.academiccloud.de/chat/4c57fb70-ea93-49b4-9924-2f3d4f44ac5d^" ^
+  -H ^"sec-ch-ua: ^\^"Chromium^\^";v=^\^"130^\^", ^\^"Google Chrome^\^";v=^\^"130^\^", ^\^"Not?A_Brand^\^";v=^\^"99^\^"^" ^
+  -H ^"sec-ch-ua-mobile: ?0^" ^
+  -H ^"sec-ch-ua-platform: ^\^"Windows^\^"^" ^
+  -H ^"sec-fetch-dest: empty^" ^
+  -H ^"sec-fetch-mode: cors^" ^
+  -H ^"sec-fetch-site: same-origin^" ^
+  -H ^"sec-gpc: 1^" ^
+  -H ^"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36^" ^
+  -H ^"x-stainless-arch: unknown^" ^
+  -H ^"x-stainless-lang: js^" ^
+  -H ^"x-stainless-os: Unknown^" ^
+  -H ^"x-stainless-package-version: 5.23.0^" ^
+  -H ^"x-stainless-retry-count: 0^" ^
+  -H ^"x-stainless-runtime: browser:chrome^" ^
+  -H ^"x-stainless-runtime-version: 130.0.0^" ^
+  --data-raw ^"^{^\^"model^\^":^\^"codestral-22b^\^",^\^"messages^\^":^[^{^\^"role^\^":^\^"system^\^",^\^"content^\^":^\^"You are a helpful assistant.^\^"^},^{^\^"role^\^":^\^"user^\^",^\^"content^\^":^\^"^你^是^谁^\^"^}^],^\^"temperature^\^":0.5,^\^"top_p^\^":0.5,^\^"stream^\^":true,^\^"stream_options^\^":^{^\^"include_usage^\^":true^}^}^"
+
+
+{
+    "model": "codestral-22b",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "你是谁"
+        }
+    ],
+    "temperature": 0.5,
+    "top_p": 0.5,
+    "stream": true,
+    "stream_options": {
+        "include_usage": true
+    }
+}
+
+	message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" questions","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.420
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":",","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.420
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" and","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.420
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" help","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.420
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" you","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.420
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" with","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.420
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" a","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" variety","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" of","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" tasks","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" to","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" the","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" best","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" of","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" my","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.451
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" abilities","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.476
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":".","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+13:10:29.476
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":"","reasoning_content":null},"logprobs":null,"finish_reason":"stop","stop_reason":null,"token_ids":null}]}
+13:10:29.476
+message	{"id":"chatcmpl-b49eaef2a5822937","object":"ch
+
+
+data: {"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"role":"assistant","content":"","reasoning_content":null},"logprobs":null,"finish_reason":null}],"prompt_token_ids":null}
+
+data: {"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":" I","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":"'","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":"m","reasoning_content":null},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+......
+
+data: {"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[{"index":0,"delta":{"content":"","reasoning_content":null},"logprobs":null,"finish_reason":"stop","stop_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-b49eaef2a5822937","object":"chat.completion.chunk","created":1767244227,"model":"codestral-22b","choices":[],"usage":{"prompt_tokens":16,"total_tokens":85,"completion_tokens":69}}
+
+data: [DONE]
+
