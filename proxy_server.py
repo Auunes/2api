@@ -249,35 +249,20 @@ async def list_models(authorization: Optional[str] = Header(None)):
                     "data": openai_models
                 }
             else:
-                logger.error(f"获取模型列表失败: {response.status_code}")
-                # 返回默认模型列表
-                return {
-                    "object": "list",
-                    "data": [
-                        {
-                            "id": "deepseek-r1",
-                            "object": "model",
-                            "created": 1677610602,
-                            "owned_by": "deepseek"
-                        }
-                    ]
-                }
+                error_text = response.text
+                logger.error(f"获取模型列表失败: {response.status_code} - {error_text}")
+                raise HTTPException(
+                    status_code=response.status_code,
+                    detail=f"获取模型列表失败: {error_text}"
+                )
     except HTTPException:
         raise
+    except httpx.TimeoutException:
+        logger.error("获取模型列表超时")
+        raise HTTPException(status_code=504, detail="获取模型列表超时")
     except Exception as e:
         logger.error(f"获取模型列表异常: {str(e)}", exc_info=True)
-        # 返回默认模型列表
-        return {
-            "object": "list",
-            "data": [
-                {
-                    "id": "deepseek-r1",
-                    "object": "model",
-                    "created": 1677610602,
-                    "owned_by": "deepseek"
-                }
-            ]
-        }
+        raise HTTPException(status_code=500, detail=f"获取模型列表异常: {str(e)}")
 
 
 if __name__ == "__main__":
