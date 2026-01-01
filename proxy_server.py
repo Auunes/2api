@@ -166,18 +166,65 @@ async def root():
 
 @app.get("/v1/models")
 async def list_models():
-    """列出可用模型"""
-    return {
-        "object": "list",
-        "data": [
-            {
-                "id": "deepseek-r1",
-                "object": "model",
-                "created": 1677610602,
-                "owned_by": "deepseek"
-            }
-        ]
-    }
+    """列出可用模型 - 从目标API动态获取"""
+    try:
+        models_url = "https://chat-ai.academiccloud.de/models"
+        headers = {
+            "accept": "*/*",
+            "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+            "cookie": CONFIG.get('COOKIE', ''),
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        }
+
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.get(models_url, headers=headers)
+
+            if response.status_code == 200:
+                data = response.json()
+
+                # 转换为OpenAI格式
+                openai_models = []
+                for model in data.get("data", []):
+                    openai_model = {
+                        "id": model.get("id"),
+                        "object": "model",
+                        "created": model.get("created", 1677610602),
+                        "owned_by": model.get("owned_by", "chat-ai")
+                    }
+                    openai_models.append(openai_model)
+
+                return {
+                    "object": "list",
+                    "data": openai_models
+                }
+            else:
+                logger.error(f"获取模型列表失败: {response.status_code}")
+                # 返回默认模型列表
+                return {
+                    "object": "list",
+                    "data": [
+                        {
+                            "id": "deepseek-r1",
+                            "object": "model",
+                            "created": 1677610602,
+                            "owned_by": "deepseek"
+                        }
+                    ]
+                }
+    except Exception as e:
+        logger.error(f"获取模型列表异常: {str(e)}", exc_info=True)
+        # 返回默认模型列表
+        return {
+            "object": "list",
+            "data": [
+                {
+                    "id": "deepseek-r1",
+                    "object": "model",
+                    "created": 1677610602,
+                    "owned_by": "deepseek"
+                }
+            ]
+        }
 
 
 if __name__ == "__main__":
